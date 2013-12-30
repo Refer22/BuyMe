@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Pruebas API Amazon</title>
+	<script type="text/javascript" src="zepto.js"></script>
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc4.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		new AWS.S3().listObjects({Bucket: 'myBucket'}, function(error, data) {
+		  if (error) {
+		    console.log(error); // an error occurred
+		  } else {
+		    console.log(data); // request succeeded
+		  }
+		});
+	})
+		
+	</script>
+</head>
+<body>
+	<div id="status"></div>
+	<ul id="objects"></ul>
+</body>
+</html>
